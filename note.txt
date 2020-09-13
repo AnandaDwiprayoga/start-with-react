@@ -1,0 +1,1 @@
+props = property untuk mengirimkan data. nama property boleh custom atau terserah
