@@ -18,11 +18,13 @@ code {
   box-sizing: border-box;
 }
 
-.home {
+.App {
   min-height: 100vh;
-  background: darkslateblue;
+  color: black;
+  text-align: center;
+}
+
+.dark {
+  background: black;
   color: white;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 }
