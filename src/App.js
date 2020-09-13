@@ -1,5 +1,8 @@
 import React , {useState} from 'react';
 import './App.css';
+import DarkmodeTogle from './components/checkbox-mode';
+import Button from "./components/button-counter";
+import Label from "./components/label-counter";
 
 const App = () => {
   //variabel in index 0 is the value that always changed
@@ -20,11 +23,9 @@ const App = () => {
   return (
     <div className={AppClass} > 
       <h1>Hello React</h1>
-      <p>Total clicked  = {index}</p>
-      <button onClick={counterAdd}>Click To Increament</button>
-      <div className="input-darkmode">
-          <input onClick={checkboxClicked} type="checkbox" id="darkmode"/> <label htmlFor="darkmode">Dark Mode</label>
-      </div>
+      <Label index={index}/>
+      <Button onCounterAdd={counterAdd}/>
+      <DarkmodeTogle onCheckboxClicked={checkboxClicked} />
    </div>
   );
 };
