@@ -1,0 +1,12 @@
+1. pertama membuat store global
+import {createStore } from 'redux';
+
+2. Membuat ACITION ,
+aktion disini adalah mendeskripsikan kemampuan apa yang dimiliki state, contoh : menambah, mengurang
+
+3. REDUCER 
+reducer adalah apa yang dilakukan ketika sesuai dengan type ACTION, contoh jika aksi menambah maka state ditambah 1
+
+ 4. DISPATCH 
+mejalankan aksi dan memilih typenya. 
+

@@ -1,10 +1,12 @@
-import React, {useState, useContext} from 'react'
-import { MovieContext } from "./../ContextApi/movie-context";
+import React, {useState } from 'react'
+import { useDispatch } from 'react-redux';
+// import action
+import { AddMovieAction } from './../redux/actions';
 
 const InputMovie = () => {
     const [ inputName, inputNameState ]  = useState("");
     const [ inputPrice, inputPriceState ]  = useState("");
-    const [ movies, moviesState ] = useContext(MovieContext); 
+    const dispatch = useDispatch();
 
     const onInputNameChanged = e => {
         inputNameState(e.target.value);
@@ -23,7 +25,7 @@ const InputMovie = () => {
             id: Math.floor(Math.random() * 1000)
         };
 
-        moviesState([...movies, movieInput]);
+        dispatch(AddMovieAction(movieInput));
 
         inputNameState('');
         inputPriceState('');

@@ -1,9 +1,10 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import Movie from "./movie";
-import { MovieContext } from "./../ContextApi/movie-context";
+import { useSelector } from 'react-redux';
 
 const MovieList = () => {
-    const [ movies ] = useContext(MovieContext);
+    const movies = useSelector(state => state.movies);
+    
     return (
         <div className="movie-list">
             {movies.map(movie => (

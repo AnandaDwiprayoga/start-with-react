@@ -1,8 +1,9 @@
-import React, {useContext} from 'react';
-import { MovieContext } from "./../ContextApi/movie-context";
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 const Nav = () => {
-    const [ movies ] = useContext(MovieContext);
+    const movies = useSelector(state => state.movies);
+
     return (
         <nav>
             <ul>
