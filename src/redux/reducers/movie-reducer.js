@@ -1,6 +1,6 @@
 const { default: CONFIG } = require("../../global");
 
-const addMovieReducer = (state = [
+const MovieReducer = (state = [
     {
         name: 'Harry Potter',
         price : '$10',
@@ -25,4 +25,4 @@ const addMovieReducer = (state = [
     }
 }
 
-export default addMovieReducer;
+export default MovieReducer;
