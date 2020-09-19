@@ -1,9 +1,7 @@
 import Nav from "./nav";
-import MovieList from "./movie-list";
-import InputMovie from "./Input-movie";
+import MealList from "./meal-list";
 
 export {
     Nav,
-    MovieList,
-    InputMovie
+    MealList,
 }

@@ -1,13 +1,18 @@
-import React, {useContext} from 'react';
-import { MovieContext } from "./../ContextApi/movie-context";
+import React from 'react';
+import { Link } from "react-router-dom";
 
+// untuk menggunakan nav cukup menggunakan Link pada raact-router-dom untuk menggantikan anchor
 const Nav = () => {
-    const [ movies ] = useContext(MovieContext);
     return (
         <nav>
+            <h3>Logo</h3>
             <ul>
-                <li>Fake movie</li>
-                <li>Total your movie : <b>{movies.length}</b></li>
+                <li>
+                    <Link to="/shop">Shop</Link>
+                </li>
+                <li>
+                    <Link to="/about">About</Link>
+                </li>
             </ul>
         </nav>
     );
