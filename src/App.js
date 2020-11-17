@@ -1,19 +1,20 @@
-import React from 'react';
-import './App.css';
+import React, {useState} from 'react';
+import { Player, Song } from './components';
+import './style/app.scss';
+import data from "./util";
 
-// import components
-import Nav from './components/Nav';
-import Tweets from './components/Tweets';
+const App = () => {
 
-const App = () => (
-  <div className="App"> 
-    <h1>Hello React</h1>
-    <div className="home">
-      <Nav />
-      <Tweets />
+  const [songs, setSongs] = useState(data());
+  const [currentSong, setCurrentSong] = useState(songs[0]);
+
+  return (
+    <div className="App"> 
+      <Song  currentSong={currentSong}/>
+      <Player currentSong={currentSong}/>
     </div>
-  </div>
-);
+  );
+}
 
 export default App;
 
