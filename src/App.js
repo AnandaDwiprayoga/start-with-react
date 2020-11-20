@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Player, Song, Library, Nav } from './components';
 import './style/app.scss';
-import data from "./util";
+import data from "./data";
 
 const App = () => {
 
