@@ -1,19 +1,37 @@
 import React from 'react';
-import './App.css';
+import GlobalStyle from './components/GlobalStyle';
+import { AboutPage, ContactUsPage, MovieDetailPage, OurWorkPage } from './pages';
+import { Switch, Route, useLocation } from 'react-router-dom';
+import { Nav } from './components';
+import { AnimatePresence } from 'framer-motion';
 
-// import components
-import Nav from './components/Nav';
-import Tweets from './components/Tweets';
+const App = () => {
+  //get key and location page
+  const location = useLocation();
 
-const App = () => (
-  <div className="App"> 
-    <h1>Hello React</h1>
-    <div className="home">
-      <Nav />
-      <Tweets />
+  return (
+    <div className="App"> 
+      <GlobalStyle />
+        <Nav />
+        <AnimatePresence exitBeforeEnter>
+          <Switch location={location} key={location.pathname}>
+              <Route path="/" exact >
+                <AboutPage />
+              </Route>
+              <Route path="/ContactUs" >
+                <ContactUsPage/>
+              </Route>
+              <Route path="/OurWork" >
+                <OurWorkPage/>
+              </Route>
+              <Route path="/work/:id" >
+                <MovieDetailPage/>
+              </Route>
+          </Switch>
+        </AnimatePresence>
     </div>
-  </div>
-);
+  );
+};
 
 export default App;
 
