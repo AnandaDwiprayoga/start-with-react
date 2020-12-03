@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 const Nav = () => {
+    // use selector to get all state 
     const movies = useSelector(state => state.movies);
 
     return (
