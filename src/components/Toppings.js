@@ -14,6 +14,21 @@ const containerVariants = {
   }
 };
 
+const buttonVariants = {
+  hover : {
+    // keyframe, nilai array akana dijalankan 1 persatu
+    scale : 1.1,
+    textShadow: "0 0 8px white", 
+    boxShadow: "0 0 8px black",
+    transition : {
+      //delay ketika menjalankan ulang animation
+       duration: 0.3,
+        //  attribute yoyo akan mengulang animation sesuai dengan value yoyo,
+        // jika Infinity akan dijalankan terus menerus, bisa diganti dengan angka
+       yoyo: Infinity
+    }
+  }
+}
 
 const Toppings = ({ addTopping, pizza }) => {
   let toppings = ['mushrooms', 'peppers', 'onions', 'olives', 'extra cheese', 'tomatoes'];
@@ -42,7 +57,7 @@ const Toppings = ({ addTopping, pizza }) => {
       </ul>
 
       <Link to="/order">
-        <motion.button whileHover={{scale: 1.1,textShadow: "0 0 8px white", boxShadow: "0 0 8px black"}}>
+        <motion.button variants={buttonVariants} whileHover="hover">
           Order
         </motion.button>
       </Link>

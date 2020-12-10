@@ -25,6 +25,22 @@ const nextVariants = {
   }
 };
 
+const buttonVariants = {
+  hover : {
+    // keyframe, nilai array akana dijalankan 1 persatu
+    scale : 1.1,
+    textShadow: "0 0 8px white", 
+    boxShadow: "0 0 8px black",
+    transition : {
+      //delay ketika menjalankan ulang animation
+       duration: 0.3,
+        //  attribute yoyo akan mengulang animation sesuai dengan value yoyo,
+        // jika Infinity akan dijalankan terus menerus, bisa diganti dengan angka
+       yoyo: Infinity
+    }
+  }
+}
+
 
 const Base = ({ addBase, pizza }) => {
   const bases = ['Classic', 'Thin & Crispy', 'Thick Crust'];
@@ -61,7 +77,7 @@ const Base = ({ addBase, pizza }) => {
           animate="show"
         > 
           <Link to="/toppings">
-            <motion.button whileHover={{scale: 1.1,textShadow: "0 0 8px white", boxShadow: "0 0 8px black"}} >Next</motion.button>
+            <motion.button variants={buttonVariants} whileHover="hover" >Next</motion.button>
           </Link>
         </motion.div>
       )}
