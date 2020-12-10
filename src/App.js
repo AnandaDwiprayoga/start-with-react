@@ -1,19 +1,19 @@
 import React from 'react';
-import './App.css';
+import { Nav } from './components';
+import GlobalStyles from './components/GlobalStyle';
+import { HomePage } from './pages';
 
-// import components
-import Nav from './components/Nav';
-import Tweets from './components/Tweets';
+const App = () => {
 
-const App = () => (
-  <div className="App"> 
-    <h1>Hello React</h1>
-    <div className="home">
-      <Nav />
-      <Tweets />
+  return (
+    <div className="App"> 
+        <GlobalStyles />
+        <Nav />
+        <HomePage />
     </div>
-  </div>
-);
+  );
+};
+
 
 export default App;
 

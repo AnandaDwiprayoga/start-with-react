@@ -1,0 +1,9 @@
+export const TYPE_FETCH_GAMES = "FETCH_GAMES";
+export const TYPE_FETCH_GAMES_SEARCH = "FETCH_GAMES_SEARCH";
+export const TYPE_FETCH_GAMES_SEARCH_RESET = "FETCH_GAMES_SEARCH_RESET";
+export const TYPE_FETCH_GAMES_LOADING = "FETCH_GAMES_LOADING";
+export const TYPE_FETCH_GAME_DETAIL = "FETCH_GAMES_DETAIL";
+export const TYPE_RESET_DETAIL = "FETCH_RESET_DETAIL";
+export const TYPE_FETCH_GAME_DETAIL_LOADING = "FETCH_DETAIL_LOADING";
+export const BASE_URL = "https://api.rawg.io/api/";
+export const IMAGE_POSTER_DEFAULT = "https://www.3dtotalgames.com/wp-content/uploads/2014/01/404_box_cover.jpg";
