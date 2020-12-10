@@ -40,4 +40,4 @@ const StyledGame = styled(motion.div)`
     }
 `
 
-export default Game
+export default Game;
