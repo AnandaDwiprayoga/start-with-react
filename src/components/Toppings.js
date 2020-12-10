@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -12,17 +13,21 @@ const Toppings = ({ addTopping, pizza }) => {
         {toppings.map(topping => {
           let spanClass = pizza.toppings.includes(topping) ? 'active' : '';
           return (
-            <li key={topping} onClick={() => addTopping(topping)}>
+            <motion.li key={topping} onClick={() => addTopping(topping)}
+            // originX agar ketika di scale posisi list tidak geser ke kiri
+              whileHover={{scale: 1.3, color: '#f8e112', originX: 0}}
+              transition={{type: 'spring', stiffness: 300}}
+            >
               <span className={spanClass}>{ topping }</span>
-            </li>
+            </motion.li>
           )
         })}
       </ul>
 
       <Link to="/order">
-        <button>
+        <motion.button whileHover={{scale: 1.1,textShadow: "0 0 8px white", boxShadow: "0 0 8px black"}}>
           Order
-        </button>
+        </motion.button>
       </Link>
 
     </div>
