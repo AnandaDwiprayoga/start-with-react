@@ -1,9 +1,13 @@
+import { motion } from 'framer-motion';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <div className="home container">
+    <motion.div className="home container"
+      initial={{opacity: 0}}
+      animate={{opacity: 1}}
+    >
       <h2>
         Welcome to Pizza Joint
       </h2>
@@ -12,7 +16,7 @@ const Home = () => {
           Create Your Pizza
         </button>
       </Link>
-    </div>
+    </motion.div>
   )
 }
 
