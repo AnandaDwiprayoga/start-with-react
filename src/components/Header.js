@@ -25,7 +25,13 @@ const pathVariants = {
 const Header = () => {
   return (
     <header>
-      <div className="logo">
+      <motion.div 
+        className="logo" 
+        drag
+        // dragConstraints digunakan untuk posisi ketika drag dilepas
+        dragConstraints={{left: 0, top: 0, right: 0, bottom: 0}}
+        // dragElastic digunakan untuk beban ketika didrag, semakin kecil semakin berat
+        dragElastic={0.2}>
         <motion.svg variants={svgVaraints} initial="hidden" animate="show" className="pizza-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
           <motion.path
             variants={pathVariants}
@@ -38,7 +44,7 @@ const Header = () => {
             d="M50 30 L50 -10 C50 -10 90 -10 90 30 Z"
           />
         </motion.svg>
-      </div>
+      </motion.div>
       <motion.div className="title"
         initial={{ y: -250 }}
         animate={{ y: -10 }}
