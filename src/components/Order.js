@@ -1,6 +1,5 @@
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import React from 'react';
-
 
 const containerVariants = {
   hidden : {
@@ -21,6 +20,12 @@ const containerVariants = {
       // gap between child component delay
       staggerChildren: 0.4
     }
+  },
+  exit : {
+    x: '-100vw',
+    transition : {
+      ease : "easeInOut"
+    }
   }
 };
 
@@ -35,14 +40,15 @@ const childVariants = {
 
 
 
-
 const Order = ({ pizza }) => {
+
   return (
     <motion.div className="container order"
       variants={containerVariants}
       initial="hidden"
       animate="show"
-    >
+      exit="exit"
+    > 
       <h2>Thank you for your order :)</h2>
       <motion.p variants={childVariants}>You ordered a {pizza.base} pizza with:</motion.p>
       <motion.div variants={childVariants}>

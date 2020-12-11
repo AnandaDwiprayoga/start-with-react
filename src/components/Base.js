@@ -12,6 +12,12 @@ const containerVariants = {
     opacity: 1,
     x: 0,
     transition: { type: "spring", stiffness: 120}
+  },
+  exit : {
+    x: '-100vw',
+    transition : {
+      ease : "easeInOut"
+    }
   }
 };
 
@@ -51,6 +57,7 @@ const Base = ({ addBase, pizza }) => {
       variants={containerVariants}
       initial="hidden"
       animate="show"
+      exit="exit"
       >
       <h3>Step 1: Choose Your Base</h3>
       <ul>
